@@ -36,4 +36,7 @@ And add it to the the Index just below by linking the README.md !
 
 ### DataStructure
 
-- [LinkedList](LinkedList/README.md)
+- [SinglyLinkedList](SinglyLinkedList/README.md)
+- [CircularLinkedList](CircularLinkedList/README.md)
+- [Queue](Queue/README.md)
+- [Stack](Stack/README.md)
