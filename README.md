@@ -38,5 +38,6 @@ And add it to the the Index just below by linking the README.md !
 
 - [SinglyLinkedList](SinglyLinkedList/README.md)
 - [CircularLinkedList](CircularLinkedList/README.md)
+- [DoublyLinkedList](DoublyLinkedList/README.md)
 - [Queue](Queue/README.md)
 - [Stack](Stack/README.md)
