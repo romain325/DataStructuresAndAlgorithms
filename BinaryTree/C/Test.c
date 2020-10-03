@@ -20,6 +20,9 @@ int main(int argc, char const *argv[])
 	printf("\n");
 	printf("Binary Tree Asc Order\n");
 	printDesc(tree);
+	printf("\n");
+	printf("Binary Tree Size:  %d\n", getSize(tree));
+	printf("Binary Tree Height:  %d\n", getHeight(tree));
 
 	node = searchValue(tree, 7);
 	printf("\nResearch Result: %d\n\n",node->val);
@@ -42,7 +45,7 @@ int main(int argc, char const *argv[])
 		printf("%d  ", arrVal2[i]);
 	}
 
-	printf("Tree erasing");
+	printf("\n\nTree erasing");
 	eraseTree(tree);
 
 	return 0;

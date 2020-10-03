@@ -36,7 +36,6 @@ Boolean insert(BinaryTree* br, int val){
 	return TRUE;
 }
 
-
 // FOLLOW INFIX PRINCIPE
 void printAsc(BinaryTree tree){
 
@@ -92,6 +91,7 @@ Node* searchValue(BinaryTree tree, int key){
 	return NULL;
 }
 
+// Get Binary Tree Size
 int getSize(BinaryTree tree){
 	if(isEmpty(tree)) return 0;
 	return 1 + getSize(tree->l) + getSize(tree->r);
@@ -138,4 +138,15 @@ int createDescArrayFromTree(BinaryTree tree,int array[] ,int index) {
 	index = createDescArrayFromTree(tree->l, array, index);
 
 	return index;
+}
+
+int getHeight(BinaryTree tree){
+	int tmpL, tmpR;
+	if(isEmpty(tree)) return -1;
+
+	tmpL = getHeight(tree->l);
+	tmpR = getHeight(tree->r);
+
+	if(tmpL > tmpR) return tmpL +1;
+	else return tmpR +1;
 }

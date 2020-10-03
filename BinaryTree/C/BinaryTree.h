@@ -37,4 +37,6 @@ int createAscArrayFromTree(BinaryTree tree,int array[] ,int index);
 
 int createDescArrayFromTree(BinaryTree tree,int array[] ,int index);
 
+int getHeight(BinaryTree tree);
+
 #endif
