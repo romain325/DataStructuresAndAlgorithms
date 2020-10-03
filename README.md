@@ -32,6 +32,13 @@ And add it to the the Index just below by linking the README.md !
 
 ----------------
 
+## Disclaimer
+
+There are no perfect DataStructure or Algorithms, it does depends on the situation and the usage you'll make of it  
+To make your decision, use the complexity tables that will help you find the one that matches you need!  
+
+----------------
+
 ## Index
 
 ### DataStructure
@@ -41,3 +48,4 @@ And add it to the the Index just below by linking the README.md !
 - [DoublyLinkedList](DoublyLinkedList/README.md)
 - [Queue](Queue/README.md)
 - [Stack](Stack/README.md)
+- [Binary Tree](BinaryTree/README.md)
