@@ -1,0 +1,24 @@
+#ifndef UTILS_H
+#define UTILS_H
+
+
+/* STRUCT DEFINITIONS */
+
+typedef enum{
+	NO,
+	YES,
+	UNEXISTANT_GNODE,
+	MALLOC_ERROR,
+	FILE_OPENING_ERROR,
+	ALREADY_EXISTING_NODE,
+	EMPTY_LIST,
+	FILE_NOT_FOUND
+}ERROR_TYPE;
+
+typedef enum{ FALSE, TRUE }Boolean;
+
+/* METHOD DEFINITIONS */ 
+
+void printResult(int err);
+
+#endif
