@@ -2,15 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Boolean isEmpty(BinaryTree br){
-	if(br == NULL) return TRUE;
-	return FALSE;
-}
-
-BinaryTree createEmpty(void){
-	return NULL;
-}
-
+/* PRIVATE FUNCTION */
 // Insert a int value depending on his value
 Boolean insert(BinaryTree* br, int val){
 	Node* tmp;
@@ -34,6 +26,27 @@ Boolean insert(BinaryTree* br, int val){
 		insert(&((*br)->r), val);
 
 	return TRUE;
+}
+
+
+
+Boolean isEmpty(BinaryTree br){
+	if(br == NULL) return TRUE;
+	return FALSE;
+}
+
+BinaryTree createEmpty(void){
+	return NULL;
+}
+
+Boolean insertNode(BinaryTree* br, int val){
+	Node* tmp;
+	tmp = searchValue(*br, val);
+	if(tmp != NULL){
+		return FALSE;
+	}
+
+	return insert(br, val);
 }
 
 // FOLLOW INFIX PRINCIPE
@@ -86,6 +99,22 @@ Node* searchValue(BinaryTree tree, int key){
 	if(!isEmpty(tmp)) return tmp; 
 
 	tmp = searchValue(tree->r, key);
+	if(!isEmpty(tmp)) return tmp;
+
+	return NULL;
+}
+
+Node* searchParent(BinaryTree  tree, int key){
+	Node* tmp;
+
+	if(isEmpty(tree)) return NULL;
+	if(tree->val == key) return NULL;
+	if((!isEmpty(tree->l) && tree->l->val == key) || (!isEmpty(tree->r) && tree->r->val == key)) return tree;
+
+	tmp = searchParent(tree->l, key);
+	if(!isEmpty(tmp)) return tmp; 
+
+	tmp = searchParent(tree->r, key);
 	if(!isEmpty(tmp)) return tmp;
 
 	return NULL;
@@ -150,3 +179,83 @@ int getHeight(BinaryTree tree){
 	if(tmpL > tmpR) return tmpL +1;
 	else return tmpR +1;
 }
+
+int getMin(BinaryTree tree){
+	if(isEmpty(tree->l )){
+		return tree->val;
+	}
+	return getMin(tree->l);
+}
+
+int getMax(BinaryTree tree){
+	if(isEmpty(tree->r)){
+		return tree->val;
+	}
+	return getMax(tree->r);
+}
+
+Boolean removeNode(BinaryTree tree, int key){
+	int val;
+	Node *selectedNode, *toRemoveParent, *tmp;
+
+	// Search for the value we want to remove
+	selectedNode = searchValue(tree, key);
+	if(isEmpty(selectedNode)){return FALSE;}
+
+	// If the node we want to remove doesn't have child then we remove it itself so we get his toRemove
+	// Else we do take the min from the right branch if it exists or the max of the left branch
+	if(isEmpty(selectedNode->r) && isEmpty(selectedNode->l)){
+		val = key;
+		toRemoveParent = searchParent(tree, key);
+	}else{
+		tmp = selectedNode;
+		if(tmp->val == tree->val){
+			if(!isEmpty(tmp->r)){
+				tmp = tmp->r;
+			}else{
+				tmp = tmp->l;
+			}
+		}
+
+		if(isEmpty(tmp->r)){
+			val = getMax(tmp);
+		}else{
+			val = getMin(tmp);
+		}
+		toRemoveParent = searchParent(tmp, val);
+		selectedNode->val = val;
+	}
+
+
+	if(!isEmpty(toRemoveParent->r) && toRemoveParent->r->val == val){		
+		tmp = toRemoveParent->r;
+		toRemoveParent->r = NULL;
+	}
+	if(!isEmpty(toRemoveParent->l) && toRemoveParent->l->val == val){
+		tmp = toRemoveParent->l;
+		toRemoveParent->l = NULL;
+	}
+
+	free(tmp);
+	return TRUE;
+		
+}
+
+
+// Function to print binary tree in 2D
+void drawTree(BinaryTree tree, int space){
+	int count = 1;
+
+    if (isEmpty(tree)) 
+        return; 
+  
+    space += count; 
+  
+    drawTree(tree->r, space); 
+
+    for (int i = count; i < space; i++) 
+        printf("\t"); 
+    printf("-- %d|\n", tree->val); 
+  
+    drawTree(tree->l, space); 
+} 

@@ -17,7 +17,7 @@ typedef Node* BinaryTree;
 
 BinaryTree createEmpty(void);
 
-Boolean insert(BinaryTree* br, int val);
+Boolean insertNode(BinaryTree* br, int val);
 
 Boolean isEmpty(BinaryTree br);
 
@@ -27,16 +27,22 @@ void printDesc(BinaryTree tree);
 
 void eraseTree(BinaryTree tree);
 
-Node* searchValue(BinaryTree tree, int key); 
+Node* searchValue(BinaryTree tree, int key);
+Node* searchParent(BinaryTree  tree, int key);
 
 void sortArray(int array[],int size, Boolean ascOrder);
-
-int getSize(BinaryTree tree);
 
 int createAscArrayFromTree(BinaryTree tree,int array[] ,int index);
 
 int createDescArrayFromTree(BinaryTree tree,int array[] ,int index);
 
+int getSize(BinaryTree tree);
 int getHeight(BinaryTree tree);
+int getMin(BinaryTree tree);
+int getMax(BinaryTree tree);
+
+Boolean removeNode(BinaryTree tree, int key);
+
+void drawTree(BinaryTree tree, int space);
 
 #endif
