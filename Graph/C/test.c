@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
 
 	printGraph(g);
 
-	printf("LENGTH GRAPH---------\n");
+	printf("LENGTH GRAPH--------\n");
 	printf("Nbr of nodes: %d\n", graphLength(g));
 	printf("Nbr of arcs : %d\n", graphArcsLength(g));
 
