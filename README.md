@@ -51,3 +51,4 @@ To make your decision, use the complexity tables that will help you find the one
 - [Binary Tree](BinaryTree/README.md)
 - [Graph](Graph/README.md)
 - [Skip List](SkipList/README.md)
+- [Hash Table](HashTable/README.md)

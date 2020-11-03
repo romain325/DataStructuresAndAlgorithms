@@ -8,6 +8,8 @@ void initArray(hashArray arr){
     }
 }
 
+// THIS FUNCTION SHOULD BE PROHIBITED IN REAL CASE AND INSTEAD USE ONE FROM THE HashAlgorithms.c FILE
+// THIS IS A DEMO TO EXPLAIN SIMPLY HOW IT WORKS
 int hashCode(int key) {
     return key % MAX_SIZE;
 }
