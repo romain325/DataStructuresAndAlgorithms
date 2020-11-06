@@ -46,8 +46,7 @@ void mergeSort(int arr[], int length){
     }
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]){
     int arr[] = {6,6,7,420,69,5,3,88};
     int length = sizeof(arr)/sizeof(arr[0]);
     clock_t begin,end;

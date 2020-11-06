@@ -43,12 +43,20 @@ To make your decision, use the complexity tables that will help you find the one
 
 ### DataStructure
 
-- [SinglyLinkedList](SinglyLinkedList/README.md)
-- [CircularLinkedList](CircularLinkedList/README.md)
-- [DoublyLinkedList](DoublyLinkedList/README.md)
-- [Queue](Queue/README.md)
-- [Stack](Stack/README.md)
-- [Binary Tree](BinaryTree/README.md)
-- [Graph](Graph/README.md)
-- [Skip List](SkipList/README.md)
-- [Hash Table](HashTable/README.md)
+- [SinglyLinkedList](DataStructures/SinglyLinkedList/README.md)
+- [CircularLinkedList](DataStructures/CircularLinkedList/README.md)
+- [DoublyLinkedList](DataStructures/DoublyLinkedList/README.md)
+- [Queue](DataStructures/Queue/README.md)
+- [Stack](DataStructures/Stack/README.md)
+- [Binary Tree](DataStructures/BinaryTree/README.md)
+- [Graph](DataStructures/Graph/README.md)
+- [Skip List](DataStructures/SkipList/README.md)
+- [Hash Table](DataStructures/HashTable/README.md)
+
+### Sorting Algorithms
+
+- [Quick Sort](SortingAlgorithms/QuickSort/README.md)
+- [Merge Sort](SortingAlgorithms/MergeSort/README.md)
+- [Bubble Sort](SortingAlgorithms/BubbleSort/README.md)
+- [Selection Sort](SortingAlgorithms/SelectionSort/README.md)
+- [Insertion Sort](SortingAlgorithms/InsertionSort/README.md)
